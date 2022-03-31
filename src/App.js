@@ -16,6 +16,11 @@ function App() {
               <Route path=":Userid" element={<Single/>}/>
               <Route path="new" element={<New/>}/> 
             </Route>
+            <Route path="products">
+              <Route index element ={<List/>}/>
+              <Route path=":Productid" element={<Single/>}/>
+              <Route path="new" element={<New/>}/>
+            </Route>
       </Routes>
     </BrowserRouter>
   )
