@@ -22,7 +22,7 @@ const Sidebar = () => {
       <hr/>
       <div className="center" >
           <ul>
-            <p className="title">Main</p>
+            <p className="title">MAIN</p>
                 <li>
                 <DashboardIcon className="icon"/>
                 <span>Dashboard</span>
