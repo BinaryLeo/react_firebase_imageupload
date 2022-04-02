@@ -20,60 +20,68 @@ const Sidebar = () => {
           <span className="logo">BinaryLeo</span>
       </div>
       <hr/>
-      <div className="center">
+      <div className="center" >
           <ul>
+            <p className="title">Main</p>
                 <li>
-                <DashboardIcon />
+                <DashboardIcon className="icon"/>
                 <span>Dashboard</span>
                 </li>
+                <p className="title">LISTS</p>
                 <li>
-                <PersonOutlineIcon />
+                <PersonOutlineIcon className="icon"/>
                 <span>Users</span>
                 </li>
                 <li>
-                <LocalShippingIcon />
+                <LocalShippingIcon className="icon"/>
                 <span>Products</span>
                 </li>
                 <li>
-                <CreditCardIcon />
+                <CreditCardIcon className="icon"/>
                 <span>Orders</span>
                 </li>
                 <li>
-                <StoreIcon />
+                <StoreIcon className="icon"/>
                 <span>Delivery</span>
                 </li>
+                <p className="title">USEFUL</p>
                 <li>
-                <InsertChartIcon />
+                <InsertChartIcon className="icon"/>
                 <span>Stats</span>
                 </li>
                 <li>
-                <SettingsApplicationsIcon />
+                <SettingsApplicationsIcon className="icon"/>
                 <span>Notifications</span>
                 </li>
+                <p className="title">SERVICE</p>
                 <li>
-                <ExitToAppIcon />
+                <ExitToAppIcon className="icon"/>
                 <span>System Health</span>
                 </li>
                 <li>
-                <NotificationsNoneIcon />
+                <NotificationsNoneIcon className="icon"/>
                 <span>Logs</span>
                 </li>
                 <li>
-                <SettingsSystemDaydreamOutlinedIcon />
+                <SettingsSystemDaydreamOutlinedIcon className="icon"/>
                 <span>Settings</span>
                 </li>
+                <p className="title">USER</p>
                 <li>
-                <PsychologyOutlinedIcon />
+                <PsychologyOutlinedIcon className="icon"/>
                 <span>Profile</span>
                 </li>
                 <li>
-                <AccountCircleOutlinedIcon />
+                <AccountCircleOutlinedIcon className="icon"/>
                 <span>Logout</span>
                 </li>
 
           </ul>
       </div>
-      <div className="bottom">Color Options</div>
+      <div className="bottom">
+        <div className="colorOption"></div>
+        <div className="colorOption"></div>
+      </div>
     </div>
   )
 }
