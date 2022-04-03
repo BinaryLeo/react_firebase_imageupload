@@ -26,6 +26,7 @@
             width: max-content;
             font-size: 12px;
             border-bottom: 1px solid rgb(160, 160, 160);
+            cursor: pointer;
         }
         .percentage {
             display: flex;
@@ -38,11 +39,11 @@
                 color: #f44336;
             }
         }
-        .icon{
+        .icon {
             font-size: 18px;
             padding: 5px;
-            border-radius: 5px; 
-            align-self: flex-end;   
+            border-radius: 5px;
+            align-self: flex-end;
         }
     }
 }
