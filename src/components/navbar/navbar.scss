@@ -1,0 +1,84 @@
+.navbar {
+    height: 50px;
+    border-bottom: 0.5px solid rgb(231, 228, 228);
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: #555;
+
+    .search {
+        display: flex;
+        align-items: center;
+        border: 0.5px solid rgb(211, 211, 211);
+        padding: 3px;
+
+        input {
+            border: none;
+            outline: none;
+            background: transparent;
+            color: #555;
+            font-size: 14px;
+            width: 100%;
+            padding: 0px;
+            margin-left: 10px;
+            margin-right: 5px;
+
+            &::placeholder {
+                color: #555;
+                font-size: 12px;
+            }
+        }
+    }
+    .wrapper {
+        width: 100%;
+        padding: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .items {
+            display: flex;
+            align-items: center;
+
+            .item {
+                display: flex;
+                align-items: center;
+                margin-right: 20px;
+                cursor: pointer;
+                text-decoration: none;
+                transition: 0.3s;
+                position: relative;
+                &:hover {
+                    color: #000;
+                }
+
+                .icon {
+                    font-size: 20px;
+                    margin-right: 5px;
+                }
+                .avatar {
+                    width: 30px;
+                    height: 30px;
+                    border-radius: 50%;
+                    margin-right: 5px;
+                }
+                .counter{
+                    width:15px;
+                    width:15px;
+                    background-color: #f01c1c;
+                    border-radius: 50%;
+                    font-size: 10px;
+                    font-weight: bold;
+                    color: #fff;
+                    margin-right: 5px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    position: absolute;
+                    top: -5px;
+                    right:-5px;
+                }
+            }
+        }
+    }
+}
