@@ -4,13 +4,14 @@ import MoreVertIcon from '@mui/icons-material/MoreVert';
 import { CircularProgressbar } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 const Featured = () => {
   //**! Temporary value */
-  let genericValue = Math.floor(Math.random() * 100);
-  let genericAmount = genericValue * 5;
-  let genericResult = Math.floor(Math.random() * 1000) * 10;
-  let lastMonth = genericResult * 12;
-  let lastYear = genericResult * 12 * 12;
+  let genericValue = Math.floor(Math.random() * 100)
+  let genericAmount = genericValue * 5
+  let target = Math.floor(Math.random() * 1000) * 120
+  let lastWeek = genericValue * 6
+  let lastMonth = lastWeek * 4
   //.................................................
   return (
     <div className="featured">
@@ -33,24 +34,24 @@ const Featured = () => {
         </p>
         <div className="summary">
           <div className="item">
-            <div className="itemTitle">Last Week</div>
-            <div className="ItemResult">
+            <div className="itemTitle">Target</div>
+            <div className="itemResult negative">
               <KeyboardArrowDownIcon className="icon" />
-              <div className="resultAmount">{`${genericResult}K`}</div>
+              <div className="resultAmount">{`${target}K`}</div>
             </div>
           </div>
           <div className="item">
-            <div className="itemTitle">Last Month</div>
-            <div className="ItemResult">
-              <KeyboardArrowDownIcon className="icon" />
+            <div className="itemTitle">Last Week</div>
+            <div className="itemResult positive">
+              <KeyboardArrowUpIcon className="icon" />
               <div className="resultAmount">{`${lastMonth}K`}</div>
             </div>
           </div>
           <div className="item">
-            <div className="itemTitle">Year</div>
-            <div className="ItemResult">
-              <KeyboardArrowDownIcon className="icon" />
-              <div className="resultAmount">{`${lastYear}K`}</div>
+            <div className="itemTitle">Last Month</div>
+            <div className="itemResult positive">
+              <KeyboardArrowUpIcon className="icon" />
+              <div className="resultAmount">{`${lastMonth}K`}</div>
             </div>
           </div>
         </div>
@@ -59,4 +60,4 @@ const Featured = () => {
   )
 }
 
-export default Featured;
+export default Featured

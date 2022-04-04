@@ -52,6 +52,25 @@
          .item{
              text-align:center;
          }
+         .itemTitle{
+                font-size:0.8rem;
+                font-weight:bold;
+                color:#555;
+         }
+         .itemResult{
+             display:flex;
+                align-items:center;
+                margin-top: 10px;
+            font-size:0.8rem;
+            font-weight:bold;
+            color:#555;
+            &.positive{
+                color:#00c853;
+            }
+            &.negative{
+                color:#f44336;
+            }
+         }
         }
         
     }
