@@ -1,10 +1,10 @@
-import React from 'react'
-import './widget.scss'
-import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowDown'
-import PersonOutlinedIcon from '@mui/icons-material/PersonOutlined'
-import AccountBalanceWalletOutlinedIcon from '@mui/icons-material/AccountBalanceWalletOutlined'
-import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined'
-import MonetizationOnOutlined from '@mui/icons-material/MonetizationOnOutlined'
+import React from 'react';
+import './widget.scss';
+import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowDown';
+import PersonOutlinedIcon from '@mui/icons-material/PersonOutlined';
+import AccountBalanceWalletOutlinedIcon from '@mui/icons-material/AccountBalanceWalletOutlined';
+import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
+import MonetizationOnOutlined from '@mui/icons-material/MonetizationOnOutlined';
 const Widgets = ({ type }) => {
   let data
 
@@ -93,4 +93,4 @@ const Widgets = ({ type }) => {
   )
 }
 
-export default Widgets
+export default Widgets;
