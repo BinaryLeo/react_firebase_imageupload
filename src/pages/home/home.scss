@@ -11,5 +11,18 @@
         .charts {
             padding: 5px 20px;
         }
+        .listContainer {
+            -webkit-box-shadow: 2px 4px 10px 1px rgba(0, 0, 0, 0.45);
+            box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.47);
+            padding: 20px;
+            margin: 20px;
+
+            .listTitle{
+                font-size:1rem;
+                font-weight:500;
+                margin-bottom: 5px;
+                color:#555;
+            }
+        }
     }
 }
