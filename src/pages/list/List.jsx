@@ -1,11 +1,18 @@
-import React from "react";
-
-function list(){
+import React from 'react';
+import Sidebar from '../../components/sidebar/Sidebar';
+import Navbar from '../../components/navbar/Navbar';
+import "./list.scss";
+import Datatable from '../../components/datatable/Datatable';
+const List = () => {
     return (
-        <div>
-        <h1>My page list</h1>
+      <div className="list">
+        <Sidebar/>
+        <div className="listContainer">
+          <Navbar/>
+          <Datatable/>
         </div>
+      </div>
     )
-}
+  }
 
-export default list;
+export default List
