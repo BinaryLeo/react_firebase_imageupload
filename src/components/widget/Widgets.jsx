@@ -11,7 +11,7 @@ const Widgets = ({ type }) => {
   //**! Temporary variables */
   const amount = Math.floor(Math.random() * 100)
   const diff = 20
-
+ 
   switch (type) {
     case 'user':
       data = {
