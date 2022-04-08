@@ -1,7 +1,8 @@
 import React from 'react'
 import './datatable.scss'
 import {DataGrid} from '@mui/x-data-grid';
-const columns = [
+import {userColumns, userRows} from '../../datatablesource';
+/* const columns = [
     { field: 'id', headerName: 'ID', width: 70 },
     { field: 'firstName', headerName: 'First name', width: 130 },
     { field: 'lastName', headerName: 'Last name', width: 130 },
@@ -17,6 +18,16 @@ const columns = [
       description: 'This column has a value getter and is not sortable.',
       sortable: false,
       width: 160,
+
+      
+      /* renderCell:(params) => {
+        return (
+          <div>
+        <span>{params.row.lastName}</span>
+        <span>{params.row.age}</span> 
+          </div>
+        )  ;
+      }, 
       valueGetter: (params) =>
         `${params.row.firstName || ''} ${params.row.lastName || ''}`,
     },
@@ -32,14 +43,14 @@ const columns = [
     { id: 7, lastName: 'Clifford', firstName: 'Ferrara', age: 44 },
     { id: 8, lastName: 'Frances', firstName: 'Rossini', age: 36 },
     { id: 9, lastName: 'Roxie', firstName: 'Harvey', age: 65 },
-  ];
+  ]; */
 const Datatable = () => {
     
   return (
     <div className="datatable">
         <DataGrid
-        rows={rows}
-        columns={columns}
+        rows={userRows}
+        columns={userColumns}
         pageSize={5}
         rowsPerPageOptions={[5]}
         checkboxSelection
