@@ -1,62 +1,64 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './datatable.scss'
-import {DataGrid} from '@mui/x-data-grid';
-import {userColumns, userRows} from '../../datatablesource';
-/* const columns = [
-    { field: 'id', headerName: 'ID', width: 70 },
-    { field: 'firstName', headerName: 'First name', width: 130 },
-    { field: 'lastName', headerName: 'Last name', width: 130 },
-    {
-      field: 'age',
-      headerName: 'Age',
-      type: 'number',
-      width: 90,
-    },
-    {
-      field: 'fullName',
-      headerName: 'Full name',
-      description: 'This column has a value getter and is not sortable.',
-      sortable: false,
-      width: 160,
+import { DataGrid } from '@mui/x-data-grid';
+import { userColumns, userRows } from '../../datatablesource';
 
-      
-      /* renderCell:(params) => {
+import Box from '@mui/material/Box';
+import InputLabel from '@mui/material/InputLabel';
+import MenuItem from '@mui/material/MenuItem';
+import FormControl from '@mui/material/FormControl';
+import Select from '@mui/material/Select';
+
+
+const Datatable = () => {
+  const [rowsNumber, setRowsNumber] = useState('6')
+  const actionColumn = [
+    {
+      field: "action",
+      headerName: "Action",
+      width: 200,
+      renderCell: (params) => {
         return (
-          <div>
-        <span>{params.row.lastName}</span>
-        <span>{params.row.age}</span> 
+          <div className="cellAction">
+            <div className="viewButton">View</div>
+            <div className="deleteButton">Delete</div>
           </div>
-        )  ;
-      }, 
-      valueGetter: (params) =>
-        `${params.row.firstName || ''} ${params.row.lastName || ''}`,
+        );
+      },
     },
   ];
-  
-  const rows = [
-    { id: 1, lastName: 'Snow', firstName: 'Jon', age: 35 },
-    { id: 2, lastName: 'Lannister', firstName: 'Cersei', age: 42 },
-    { id: 3, lastName: 'Lannister', firstName: 'Jaime', age: 45 },
-    { id: 4, lastName: 'Stark', firstName: 'Arya', age: 16 },
-    { id: 5, lastName: 'Targaryen', firstName: 'Daenerys', age: null },
-    { id: 6, lastName: 'Melisandre', firstName: null, age: 150 },
-    { id: 7, lastName: 'Clifford', firstName: 'Ferrara', age: 44 },
-    { id: 8, lastName: 'Frances', firstName: 'Rossini', age: 36 },
-    { id: 9, lastName: 'Roxie', firstName: 'Harvey', age: 65 },
-  ]; */
-const Datatable = () => {
-    
+  function handleChange(event) {
+    setRowsNumber(event.target.value); //Change the state from the dropdown
+  }
+
   return (
     <div className="datatable">
-        <DataGrid
+       <Box sx={{ minWidth: 120 }}>
+      <FormControl className="select">
+        <InputLabel id="demo-simple-select-label">Rows per Page</InputLabel>
+        <Select
+          labelId="demo-simple-select-label"
+          id="demo-simple-select"
+          value={rowsNumber}//rowsNumber by default
+          label="Rows per Page"
+          onChange={handleChange}
+        >
+          <MenuItem value={3}>3</MenuItem>
+          <MenuItem value={6}>6</MenuItem>
+          <MenuItem value={9}>9</MenuItem>
+          <MenuItem value={12}>12</MenuItem>
+        </Select>
+      </FormControl>
+    </Box>
+      <DataGrid
         rows={userRows}
-        columns={userColumns}
-        pageSize={5}
+        columns={userColumns.concat(actionColumn)}//Add action column to the end of the columns
+        pageSize={rowsNumber}
         rowsPerPageOptions={[5]}
         checkboxSelection
-        />
+      />
     </div>
   )
 }
 
-export default Datatable
+export default Datatable;

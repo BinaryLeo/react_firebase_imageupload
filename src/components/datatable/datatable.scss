@@ -1,5 +1,5 @@
 .datatable{
-  height: 600px;
+  height: 650px;
   padding:20px;
 
   .cellWithImg{
@@ -30,5 +30,30 @@
       background-color: rgba(255,0,0,0.05);
       color: rgb(220, 20, 60);
     }
+  }
+  .cellAction {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    .viewButton {
+      padding: 2px 5px;
+      border-radius: 5px;
+      color: darkblue;
+      border: 1px dotted rgba(0, 0, 139, 0.596);
+      cursor: pointer;
+    }
+    
+    .deleteButton {
+      padding: 2px 5px;
+      border-radius: 5px;
+      color: crimson;
+      border: 1px dotted rgba(220, 20, 60, 0.6);
+      cursor: pointer;
+    }
+  }
+  .select{
+    width: 200px;
+    margin-bottom:5px;
   }
 }
