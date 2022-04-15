@@ -8,19 +8,22 @@ import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
-
+import { Link } from "react-router-dom";
 
 const Datatable = () => {
-  const [rowsNumber, setRowsNumber] = useState('6')
+  const [rowsNumber, setRowsNumber] = useState(6)
   const actionColumn = [
     {
       field: "action",
       headerName: "Action",
       width: 200,
-      renderCell: (params) => {
+      renderCell: () => {
         return (
           <div className="cellAction">
-            <div className="viewButton">View</div>
+            <Link to="/users/test" style={{ textDecoration: "none" }}>
+              <div className="viewButton">View</div>
+            </Link>
+
             <div className="deleteButton">Delete</div>
           </div>
         );
@@ -33,7 +36,8 @@ const Datatable = () => {
 
   return (
     <div className="datatable">
-       <Box sx={{ minWidth: 120 }}>
+      <div className="wrapper">
+      <Box sx={{ minWidth: 120 }}>
       <FormControl className="select">
         <InputLabel id="demo-simple-select-label">Rows per Page</InputLabel>
         <Select
@@ -50,6 +54,11 @@ const Datatable = () => {
         </Select>
       </FormControl>
     </Box>
+      <div className="datatableTitle">
+        Add New User
+        <Link to="/users/new" style={{ textDecoration: "none" }} className="link">Add New</Link>
+      </div>
+      </div>
       <DataGrid
         rows={userRows}
         columns={userColumns.concat(actionColumn)}//Add action column to the end of the columns

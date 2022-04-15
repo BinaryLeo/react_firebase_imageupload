@@ -1,36 +1,41 @@
-.datatable{
+.datatable {
   height: 600px;
-  padding:20px;
+  padding: 20px;
 
-  .cellWithImg{
+  .cellWithImg {
     display: flex;
     align-items: center;
-    .cellImg{
+
+    .cellImg {
       width: 32px;
       height: 32px;
       border-radius: 50%;
       object-fit: cover;
-      margin-right:20px;
+      margin-right: 20px;
 
     }
   }
-  .cellWithStatus{
-    padding:5px;
-    border-radius:5px;
 
-    &.active{
-      background-color: rgba(0,128,0,0.05);
-      color:rgb(6, 133, 6);
+  .cellWithStatus {
+    padding: 5px;
+    border-radius: 5px;
+
+    &.active {
+      background-color: rgba(0, 128, 0, 0.05);
+      color: rgb(6, 133, 6);
     }
-    &.pending{
-      background-color: rgba(255,217,0,0.05);
+
+    &.pending {
+      background-color: rgba(255, 217, 0, 0.05);
       color: rgb(218, 165, 32);
     }
-    &.passive{
-      background-color: rgba(255,0,0,0.05);
+
+    &.passive {
+      background-color: rgba(255, 0, 0, 0.05);
       color: rgb(220, 20, 60);
     }
   }
+
   .cellAction {
     display: flex;
     align-items: center;
@@ -43,7 +48,7 @@
       border: 1px dotted rgba(0, 0, 139, 0.596);
       cursor: pointer;
     }
-    
+
     .deleteButton {
       padding: 2px 5px;
       border-radius: 5px;
@@ -52,8 +57,30 @@
       cursor: pointer;
     }
   }
-  .select{
-    width: 120px;
-    margin-bottom:5px;
+
+  .wrapper {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+
+    .select {
+      width: 120px;
+      margin-bottom: 5px;
+    }
+
+    .datatableTitle {
+       font-size: 1rem;
+      .link{
+        margin-left: 10px;
+        text-decoration: none;
+        color: #368e42;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 5px;
+        cursor: pointer;
+      }
+    }
   }
+
 }
