@@ -1,11 +1,15 @@
-import React from 'react';
+import {useState} from "react";
 import "./new.scss";
 import Navbar from "../../components/navbar/Navbar";
 import Sidebar from "../../components/sidebar/Sidebar";
 import DriveFolderUploadOutlinedIcon from "@mui/icons-material/DriveFolderUploadOutlined";
 
-const New = ({title, inputs}) => {
+const New = ({inputs, title}) => {
+    const [file, setFile] = useState("");
+    let statusImage;
+    file ? statusImage = "uploaded" : statusImage = "";
 
+    console.log(file)
     return (
         <div className="new">
             <Sidebar/>
@@ -16,33 +20,43 @@ const New = ({title, inputs}) => {
                 </div>
                 <div className="bottom">
                     <div className="left">
-                        <img src="https://icon-library.com/images/no-image-icon/no-image-icon-0.jpg" alt=""/>
+                        <img
+                            src={
+                                file
+                                    ? URL.createObjectURL(file)
+                                    : "https://icon-library.com/images/no-image-icon/no-image-icon-0.jpg"
+                            }
+                            alt=""
+                        />
                     </div>
                     <div className="right">
                         <form>
                             <div className="formInput">
                                 <label htmlFor="file">
                                     Image: <DriveFolderUploadOutlinedIcon className="icon"/>
+                                    <span className="statusImg">{statusImage}</span>
                                 </label>
-
-                                <input type="file" id="file" style={{display: "none"}}/>
+                                <input
+                                    type="file"
+                                    id="file"
+                                    onChange={(e) => setFile(e.target.files[0])}
+                                    style={{display: "none"}}
+                                />
                             </div>
-                            {inputs.map((input) => ( // for each input in inputs array render input component with props
-                                    <div className="formInput"
-                                         key={input.id}> {/* key is used to identify each input component - from formSource*/}
-                                        <label>{input.label}</label>
-                                        <input type={input.type} placeholder={input.placeholder}/>
-                                    </div>
-                                )
-                            )}
-                            <button className="btn">Add</button>
+
+                            {inputs.map((input) => (
+                                <div className="formInput" key={input.id}>
+                                    <label>{input.label}</label>
+                                    <input type={input.type} placeholder={input.placeholder}/>
+                                </div>
+                            ))}
+                            <button>Send</button>
                         </form>
                     </div>
                 </div>
             </div>
         </div>
     );
-}
-
+};
 
 export default New;
