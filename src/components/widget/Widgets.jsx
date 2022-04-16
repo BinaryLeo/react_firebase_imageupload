@@ -6,7 +6,7 @@ import AccountBalanceWalletOutlinedIcon from '@mui/icons-material/AccountBalance
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import MonetizationOnOutlined from '@mui/icons-material/MonetizationOnOutlined';
 const Widgets = ({ type }) => {
-  let data
+  let data;
 
   //**! Temporary variables */
   const amount = Math.floor(Math.random() * 100)

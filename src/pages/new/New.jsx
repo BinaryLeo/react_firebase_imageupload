@@ -8,7 +8,6 @@ const New = ({inputs, title}) => {
     const [file, setFile] = useState("");
     let statusImage;
     file ? statusImage = "uploaded" : statusImage = "";
-
     console.log(file)
     return (
         <div className="new">
@@ -34,7 +33,7 @@ const New = ({inputs, title}) => {
                             <div className="formInput">
                                 <label htmlFor="file">
                                     Image: <DriveFolderUploadOutlinedIcon className="icon"/>
-                                    <span className="statusImg">{statusImage}</span>
+                                    <span className="statusImg" id="status">{statusImage}</span>
                                 </label>
                                 <input
                                     type="file"

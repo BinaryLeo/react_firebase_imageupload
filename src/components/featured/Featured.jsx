@@ -7,11 +7,11 @@ import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 const Featured = () => {
   //**! Temporary value */
-  let genericValue = Math.floor(Math.random() * 100)
-  let genericAmount = genericValue * 5
-  let target = Math.floor(Math.random() * 1000) * 120
-  let lastWeek = genericValue * 6
-  let lastMonth = lastWeek * 4
+  let genericValue = Math.floor(Math.random() * 100);
+  let genericAmount = genericValue * 5;
+  let target = Math.floor(Math.random() * 1000) * 120;
+  let lastWeek = genericValue * 6;
+  let lastMonth = lastWeek * 4;
   //.................................................
   return (
     <div className="featured">
@@ -60,4 +60,4 @@ const Featured = () => {
   )
 }
 
-export default Featured
+export default Featured;

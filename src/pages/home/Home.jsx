@@ -1,4 +1,4 @@
-import './home.scss'
+import './home.scss';
 import Sidebar from '../../components/sidebar/Sidebar';
 import Navbar from '../../components/navbar/Navbar';
 import Widgets  from '../../components/widget/Widgets';
