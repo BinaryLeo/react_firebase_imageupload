@@ -12,19 +12,22 @@ import { Link } from "react-router-dom";
 
 const Datatable = () => {
   const [rowsNumber, setRowsNumber] = useState(6);
+  const [data, setData] = useState(userRows);
+
   const actionColumn = [
     {
       field: "action",
       headerName: "Action",
       width: 200,
-      renderCell: () => {
+      renderCell: (params) => {
         return (
           <div className="cellAction">
             <Link to="/users/test" style={{ textDecoration: "none" }}>
               <div className="viewButton">View</div>
             </Link>
 
-            <div className="deleteButton">Delete</div>
+            <div className="deleteButton" onClick={()=>handleDelete(params.row.id) }>Delete</div>
+
           </div>
         );
       },
@@ -33,7 +36,9 @@ const Datatable = () => {
   function handleChange(event) {
     setRowsNumber(event.target.value); //Change the state from the dropdown
   }
-
+    const handleDelete = (id) => {
+        setData(data.filter((item) => item.id !== id));
+    };
   return (
     <div className="datatable">
       <div className="wrapper">
@@ -60,7 +65,7 @@ const Datatable = () => {
       </div>
       </div>
       <DataGrid className="datagrid"
-        rows={userRows}
+        rows={data}
         columns={userColumns.concat(actionColumn)}//Add action column to the end of the columns
         pageSize={rowsNumber}
         rowsPerPageOptions={[5]}
