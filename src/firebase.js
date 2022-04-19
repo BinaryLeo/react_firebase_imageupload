@@ -8,12 +8,12 @@ import { getStorage } from "firebase/storage";
 
 const firebaseConfig = { // Firebase configuration
     apiKey: process.env.REACT_APP_FIREBASE_KEY,
-    authDomain: "dashboard-88b0b.firebaseapp.com",
-    projectId: "dashboard-88b0b",
-    storageBucket: "dashboard-88b0b.appspot.com",
-    messagingSenderId: "6349174575",
-    appId: "1:6349174575:web:2228bea2b68826b6ea53da",
-    measurementId: "G-S2Y70LBTYP"
+    authDomain: "dashboard-e8182.firebaseapp.com",
+    projectId: "dashboard-e8182",
+    storageBucket: "dashboard-e8182.appspot.com",
+    messagingSenderId: "615118146683",
+    appId: "1:615118146683:web:e9d5535a202a14d2bee6de",
+    measurementId: "G-EMLJ7NR12P"
 
 };
 
