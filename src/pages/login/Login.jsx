@@ -1,11 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState} from 'react';
 import './login.scss';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '../../firebase';
+import { useNavigate } from "react-router-dom";
 const Login = () => {
   const [email, setEmail] = useState('');// username
   const [password, setPassword] = useState(''); //user password
   const [error, setError] = useState(false); // error message
+
+  const navigate = useNavigate();
   const handleLogin = (e) => {
     e.preventDefault(); // prevent default behavior
 
@@ -13,7 +16,7 @@ const Login = () => {
       .then((userCredential) => { 
         // Signed in
         const user = userCredential.user;
-        console.log(user)
+        navigate('/');
       })
       .catch((error) => {
         setError(true);
