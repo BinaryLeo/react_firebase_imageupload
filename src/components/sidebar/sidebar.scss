@@ -67,17 +67,22 @@
         align-items: center;
         margin: 10px;
 
-        .colorOption {
+        .colorOption{
             width: 20px;
             height: 20px;
             border-radius: 5px;
-            border: 1px solid #ccc;
-            cursor: pointer;
 
-            &:last-child {
-                margin-left: 10px;
-                border: 1px solid #292a2b;
-                background-color: #292a2b;
+            cursor: pointer;
+            margin: 5px;
+
+            &:nth-child(1){
+                background-color: whitesmoke;
+            }
+            &:nth-child(2){
+                background-color: #333;
+            }
+            &:nth-child(3){
+                background-color: darkblue;
             }
         }
     }

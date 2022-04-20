@@ -13,7 +13,7 @@ import { DarkModeContext } from "./context/darkModeContext";
 
 function App() {
     const { darkMode } = useContext(DarkModeContext);
-    const currentUser =false;
+    const currentUser =true;
     const RequireAuth = ({children}) =>{ return currentUser ? children: <Navigate to="/login"/>}
     return (
         <div className={darkMode ? "app dark" : "app"}>
